@@ -349,6 +349,7 @@ module.exports = function(
   // Change displayed command to yarn instead of yarnpkg
   const displayedCommand = useYarn ? 'yarn' : 'npm';
 
+  console.log(chalk.red('SOCIALHUB CRA!'));
   console.log();
   console.log(`Success! Created ${appName} at ${appPath}`);
   console.log('Inside that directory, you can run several commands:');
@@ -387,6 +388,7 @@ module.exports = function(
     );
   }
   console.log();
+  console.log('see documentation at ???')
   console.log('Happy hacking!');
 };
 
