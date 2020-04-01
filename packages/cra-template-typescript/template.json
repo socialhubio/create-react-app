@@ -13,6 +13,7 @@
       "@types/jest": "^24.0.0",
       "apisauce": "^1.1.1",
       "babel-plugin-styled-components": "^1.10.7",
+      "bootstrap": "^3.3.7",
       "connected-react-router": "^6.8.0",
       "es6-promisify": "^5.0.0",
       "history": "^4.10.1",
