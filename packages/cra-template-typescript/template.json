@@ -39,6 +39,7 @@
       "redux-persist-transform-filter-immutable": "^0.3.0",
       "redux-saga": "^0.15.4",
       "reduxsauce": "^0.5.0",
+      "reselect": "^4.0.0",
       "seamless-immutable": "^7.1.4",
       "styled-components": "^4.0.3",
       "typescript": "~3.7.2"
