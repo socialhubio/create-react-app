@@ -2,7 +2,7 @@ import React, { Fragment }  from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row } from 'react-bootstrap';
 import { Route, Switch } from 'react-router';
-import LoginNavBar from 'bananasplit/dist/components/navbar/login-navbar';
+import NavBarContainer from './navbar/container';
 import { NavbarStyled } from 'bananasplit/dist/styles/global/collapsed-navbar-base';
 
 import SimpleModule from '../../modules/simple-module';
@@ -28,7 +28,7 @@ export class RootContainer extends React.Component {
     return (
       <Fragment>
         {this.loadGlobalStyles()}
-        <LoginNavBar />
+        <NavBarContainer />
         <Grid fluid>
           <Row>
             <Switch>
@@ -45,4 +45,4 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {};
 
-export default connect()(RootContainer);
+export default RootContainer;

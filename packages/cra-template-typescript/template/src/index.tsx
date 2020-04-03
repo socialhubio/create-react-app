@@ -9,6 +9,7 @@ import Router from './router';
 import createStore from './redux/store/factory';
 import i18nFactory from './i18n';
 import './index.css';
+import { api, api2 } from './shared/api';
 
 // Setup The API Authentication. Intentionally Simple To Get The Ball Rolling.
 let accessToken;
@@ -20,6 +21,8 @@ accessToken = query.accesstoken;
 if (!accessToken) {
   accessToken = cookie.get('masked_accesstoken') || cookie.get('accesstoken');
 }
+api.authenticate(accessToken);
+api2.authenticate(accessToken);
 
 // Create The App Wide Redux Store (+ Middleware)
 const store = createStore();

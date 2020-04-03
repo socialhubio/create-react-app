@@ -1,1 +1,63 @@
-{ "hello":  "hello" }
+{
+  "hello": "hello!! translated!",
+  "navbar": {
+    "teams": {
+      "placeholder": "Select Teams...",
+      "allTeamsOption": "All Teams"
+    },
+    "accountExpiration": {
+      "expired": {
+        "package": "Runtime has expired",
+        "trial": "Trialtime has expired"
+      },
+      "package": "Runtime: ",
+      "trial": "Trialtime"
+    },
+    "links": {
+      "rabbitmq": "RabbitMQ",
+      "security": "Security",
+      "settings": "Settings",
+      "support": "Support",
+      "teams": "Teams",
+      "templates": "Templates",
+      "unmask": "Unmask User",
+      "users": "User",
+      "mediaLibrary": "Media Library",
+      "termsOfUse": "Terms of Use",
+      "privacyStatement": "Privacy Statement",
+      "changelogIconHover": "What's new",
+      "adaccounts": "Facebook Ads",
+      "privacy": "Privacy",
+      "cp2": "Content Planner",
+      "account": "Account",
+      "accounts": "Accounts",
+      "admin": "Admin",
+      "buyNow": "Buy now",
+      "categories": "Categories",
+      "channels": "Channels",
+      "contacts": "Contacts",
+      "contentPlanner": "Content Planner",
+      "documentation": "Documentation",
+      "extendNow": "Extend now",
+      "facebookGroup": "Facebook usergroup",
+      "featureForum": "Feature forum",
+      "features": "Features",
+      "firstSteps": "First steps",
+      "forum": "Feature Forum",
+      "help": "Help",
+      "index": "Inbox",
+      "insights": "Insights",
+      "invoices": "Subscription & billing",
+      "jenkins": "Jenkins",
+      "kibana": "Kibana",
+      "linkshortener": "Link Shortener",
+      "logout": "Logout",
+      "masked": "Masked",
+      "mms": "MMS",
+      "monitoring": "Monitoring",
+      "newrelic": "New Relic",
+      "onlineHelp": "Online help",
+      "priority": "Smart Rules"
+    }
+  }
+}

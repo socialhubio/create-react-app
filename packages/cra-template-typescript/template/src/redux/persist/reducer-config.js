@@ -2,8 +2,8 @@ import storage from 'redux-persist/lib/storage';
 import { seamlessImmutableReconciler, seamlessImmutableTransformer } from 'redux-persist-seamless-immutable';
 import createFilter from 'redux-persist-transform-filter-immutable';
 
-const calendarViewFilter = createFilter(
-  'calendar',
+const meetFilter = createFilter(
+  'meet',
   ['view']
 );
 
@@ -12,11 +12,12 @@ const transformerConfig = {
 };
 
 export default {
-  key: 'app',
+  key: 'meet',
   stateReconciler: seamlessImmutableReconciler,
   transforms: [
-    seamlessImmutableTransformer(transformerConfig)
+    seamlessImmutableTransformer(transformerConfig),
+    meetFilter
   ],
   storage,
-  whitelist: ['root', 'calendar']
+  whitelist: ['root', 'meet']
 };

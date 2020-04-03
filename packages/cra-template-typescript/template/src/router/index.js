@@ -1,15 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router';
-// import { ConnectedRouter } from 'react-router-redux';
 import { RouterToUrlQuery } from 'react-url-query';
-
-import { ConnectedRouter } from 'connected-react-router'
-
-import { connect } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+// import { ConnectedRouter } from 'connected-react-router'
 
 import Root from '../modules/root/container';
-import { history } from '../redux/store/factory';
-
+import history from './history';
 
 const Router = () => (
     <ConnectedRouter history={history}>
@@ -21,4 +17,4 @@ const Router = () => (
     </ConnectedRouter>
 );
 
-export default connect()(Router);
+export default Router;

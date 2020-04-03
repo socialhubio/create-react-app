@@ -14,14 +14,17 @@ const initialise = async () => {
   initDateTime();
   return init({
     lng: window.localStorage.locale,
+    debug: true,
     fallbackLng,
     interpolation: { escapeValue: false },
-    backend: { loadPath: locale => (translations[locale[0]] ? translations[locale[0]] : translations[fallbackLng]) }
+    resources: translations
+    // backend: { loadPath: locale => (translations[locale[0]] ? translations[locale[0]] : translations[fallbackLng]) }
   });
 };
 
 const factory = async () => {
   await initialise();
+  window.i18n = i18n;
   return i18n;
 };
 
