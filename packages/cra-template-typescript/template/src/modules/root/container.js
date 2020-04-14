@@ -6,6 +6,7 @@ import NavBarContainer from './navbar/container';
 import { NavbarStyled } from 'bananasplit/dist/styles/global/collapsed-navbar-base';
 
 import SimpleModule from '../../modules/simple-module';
+import WelcomeContainer from '../../modules/welcome/container';
 import { BootstrapStyled } from '../../styles/bootstrap'
 // import { ComponentsStyled } from '../../styles/components';
 // import { ResetStyled } from '../../styles/reset'; 
@@ -32,6 +33,7 @@ export class RootContainer extends React.Component {
         <Grid fluid>
           <Row>
             <Switch>
+              <Route path="/welcome" component={WelcomeContainer} />
               <Route path="/" component={SimpleModule} />
             </Switch>
           </Row>

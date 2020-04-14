@@ -1,15 +1,20 @@
-import { all, takeEvery, call, put } from 'redux-saga/effects';
+import { all, takeEvery, call, put, select } from 'redux-saga/effects';
 import { navigateToOriginLink } from 'bananasplit/shared/url';
 import NotificationActions from 'bananasplit/modules/notifications/actions';
 import * as NotificationToastTypes from 'bananasplit/modules/notifications/constants/notification-toast-types';
+import { WELCOME } from 'bananasplit/constants/routes';
+import { INSUFFICIENT_PERMISSIONS } from 'bananasplit/modules/notifications/constants/error-keys';
 
 import RootActions from '../modules/root/actions';
+import { push } from 'router/effects';
+import { getPathname, getURLQuery } from 'router/selectors';
 import {
-  INSUFFICIENT_PERMISSIONS,
   PACKAGE_EXPIRED,
   TRIAL_PERIOD_EXPIRED_ERROR,
   UNSUPPORTED_FILE_TYPE
 } from '../constants/error-types';
+
+const PACKAGE_URL = 'package';
 
 // Inter-App Navigate To Link
 export function* navigateToLink({ link }){
@@ -17,9 +22,12 @@ export function* navigateToLink({ link }){
 }
 
 export function* onApiError({ code, status, message = '', data }){
+  const pathname = yield select(getPathname);
   // Redirect not authenticated user to login page
-  if (code === 401 || message.includes('accesstoken')){
-    yield call(navigateToLink, { link: '' });
+  if (pathname !== WELCOME && (code === 401 || message.includes('accesstoken'))){
+    const query = yield select(getURLQuery);
+    const url = `/${PACKAGE_URL}${pathname}${query}`;
+    yield call(push, `${WELCOME}?redirect=${encodeURIComponent(url)}`);
   }
   // Redirect if package expired
   if ((code === 402 && status === PACKAGE_EXPIRED)

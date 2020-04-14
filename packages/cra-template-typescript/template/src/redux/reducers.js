@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-// import { connectRouter } from 'connected-react-router'
 import { reducer as form } from 'redux-form';
+import { routerReducer as router } from 'react-router-redux';
 
 // BS Reducers
 import notification from 'bananasplit/modules/notifications/reducer';
@@ -17,7 +17,7 @@ export default (history) => combineReducers({
   notification,
   api,
   form,
-  // router: connectRouter(history),
+  router,
   session,
   users
 });
