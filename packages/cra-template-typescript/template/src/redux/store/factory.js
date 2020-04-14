@@ -6,6 +6,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 // import debugSettings from 'bananasplit/redux/config/debug-settings';
 // import { routerMiddleware } from 'connected-react-router'
+import { identityFn } from 'bananasplit/shared/utils';
 
 import reducers from '../reducers';
 import sagas from '../sagas';
@@ -51,7 +52,7 @@ export default () => {
             ? window.__REDUX_DEVTOOLS_EXTENSION__({
               actionsBlacklist: LOGGING_BLACKLIST
             })
-            : () => {}
+            : identityFn
       )
   );
 
